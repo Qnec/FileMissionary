@@ -1,4 +1,5 @@
 package-lock.json
+.wine/
 # Logs
 logs
 *.log
