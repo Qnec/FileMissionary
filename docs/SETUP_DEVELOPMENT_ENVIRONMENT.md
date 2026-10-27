@@ -5,8 +5,9 @@ nix-shell OR nodejs v24, ffmpeg v9, imagemagick v7, latest yt-dlp, typescript v7
 With nix-shell:
 ```bash
 cd FileMissionary
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
 nix-shell
-winecfg
 npm install
 ```
 
@@ -16,6 +17,11 @@ install all the dependencies then
 ```bash
 cd FileMissionary
 export WINEPREFIX="$PWD/.wine"
-winecfg
 npm install
+```
+
+When developing:
+```bash
+cd FileMissionary
+nix-shell
 ```
