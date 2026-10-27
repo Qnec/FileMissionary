@@ -3,6 +3,6 @@ Bannable offenses:
 + 90% or more bad commit messages
 + Not communicating (for several hours consecutively, at the very least react to a message”)
 
-Benefit of the doubt shallbe given but shall not be used unless necessary.
+Benefit of the doubt shall be given but shall not be used unless necessary.
 
 We have 3/5 agreements

@@ -10,8 +10,9 @@ winecfg
 npm install
 ```
 
-Without nix-shell
-install all the dependencies
+Without nix-shell:
+
+install all the dependencies then
 ```bash
 cd FileMissionary
 export WINEPREFIX="$PWD/.wine"
