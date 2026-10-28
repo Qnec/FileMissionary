@@ -27,6 +27,7 @@ const createWindow = () => {
   }
 
   // Open the DevTools.
+  console.log('This message is being logged by the electron host process');
   mainWindow.webContents.openDevTools();
 };
 
