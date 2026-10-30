@@ -1,10 +1,19 @@
+:root {
+	--primary-bg-color: #0B0D10;
+	--secondary-bg-color: #1E2530; /*#222933*/
+	--primary-font-color: #F0F3F6;
+	--secondary-font-color: #8B9BAE;
+	--primary-border-color: #323E4D;
+	--accent-color: #00E5FF;
+}
+
 body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 	/*margin: auto;*/
 	/*max-width: 38rem;*/
 	/*padding: 2rem;*/
-	background-color: #0B0D10;
-	color: #F0F3F6;
+	background-color: var(--primary-bg-color);
+	color: var(--primary-font-color);
 	&:has( #dashboard-selector:checked ) #dashboard {
 		display: block;
 	}
@@ -25,6 +34,11 @@ body {
 	}
 }
 
+/*
+TODO: Add logos to navigation buttons
+
+ */
+
 .interface-container {
 	display: flex;
 }
@@ -35,14 +49,15 @@ body {
 }
 
 .logo {
-	color: #00E5FF;
-	border-color: #00E5FF;
+	color: var(--accent-color);
+	border-color: var(--accent-color);
 	border-radius: 6px;
-	background-color: #222933;
+	background-color: var(--secondary-bg-color);
 	border-width: 1px;
 	border-style: solid;
 	height: 40px;
 	width: 40px;
+	font-weight: bold;
 }
 
 .logo > div {
@@ -55,6 +70,12 @@ body {
 
 .logo > div > p {
 	margin: auto;
+}
+
+.title {
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 .sidebar-container {
@@ -78,23 +99,19 @@ body {
 	border-radius: 6px;
 	padding: 10px 12px;
 	box-sizing: border-box;
-	color: #8B9BAE;
+	color: var(--secondary-font-color);
 }
 
 .navigation-menu > span > input:checked ~ label {
-	background-color: #1E2530;
-	border-color: #323E4D;
+	background-color: var(--secondary-bg-color);
+	border-color: var(--primary-border-color);
 	border-width: 1px;
 	border-style: solid;
 	padding: 10px 11px;
-	color: #F0F3F6;
+	color: var(--primary-font-color);
 }
 
 .navigation-option {
 	display: none;
 }
 
-#dashboard {
-	/*display: none;*/
-	
-}

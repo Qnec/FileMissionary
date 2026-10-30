@@ -60,10 +60,12 @@
 				dashboard
 			</div>
 			<div class="navigation-option" id="downloader">
-				downloader
+				<p>URL</p>
+				<input type="text" placeholder="https://...">
 			</div>
 			<div class="navigation-option" id="image">
-				image
+				<p>Choose a file</p> <!-- For some godforsaken reason electron broke input type=file years ago and just never fixed it and told everyone to replicate the functionality with javascript -->
+				<button class="file-button">wee</button>
 			</div>
 			<div class="navigation-option" id="media">
 				media
