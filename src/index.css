@@ -1,17 +1,24 @@
 :root {
 	--primary-bg-color: #0B0D10;
-	--secondary-bg-color: #1E2530; /*#222933*/
+	--secondary-bg-color: #111419; /*#222933*/
+	--tertiary-bg-color: #1E2530;
 	--primary-font-color: #F0F3F6;
 	--secondary-font-color: #8B9BAE;
-	--primary-border-color: #323E4D;
+	--primary-border-color: #222933;
+	--secondary-border-color: #323E4D;
 	--accent-color: #00E5FF;
+}
+
+html {
+	height: 100%;
 }
 
 body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-	/*margin: auto;*/
+	margin: auto;
 	/*max-width: 38rem;*/
 	/*padding: 2rem;*/
+	height: 100%;
 	background-color: var(--primary-bg-color);
 	color: var(--primary-font-color);
 	&:has( #dashboard-selector:checked ) #dashboard {
@@ -41,18 +48,21 @@ TODO: Add logos to navigation buttons
 
 .interface-container {
 	display: flex;
+	align-items: stretch;
+	height: 100%;
 }
 
 .titlecard {
 	display: flex;
 	align-items: center;
+	margin-bottom: 25px;
 }
 
 .logo {
 	color: var(--accent-color);
 	border-color: var(--accent-color);
 	border-radius: 6px;
-	background-color: var(--secondary-bg-color);
+	background-color: var(--tertiary-bg-color);
 	border-width: 1px;
 	border-style: solid;
 	height: 40px;
@@ -78,13 +88,26 @@ TODO: Add logos to navigation buttons
 	font-size: 20px;
 }
 
+.title > p {
+	margin: 0px;
+}
+
 .sidebar-container {
 	display: flex;
 	flex-direction: column;
+	background-color: var(--secondary-bg-color);
+	border-width: 0px;
+	border-right: 1px;
+	border-color: var(--primary-border-color);
+	border-style: solid;
+	padding: 15px;
 }
 
 .navigation-menu > span {
 /*	height: 40px;*/
+	margin-top: 30px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 .navigation-menu > span > input {
@@ -100,11 +123,12 @@ TODO: Add logos to navigation buttons
 	padding: 10px 12px;
 	box-sizing: border-box;
 	color: var(--secondary-font-color);
+	font-size: 18px;
 }
 
 .navigation-menu > span > input:checked ~ label {
-	background-color: var(--secondary-bg-color);
-	border-color: var(--primary-border-color);
+	background-color: var(--tertiary-bg-color);
+	border-color: var(--secondary-border-color);
 	border-width: 1px;
 	border-style: solid;
 	padding: 10px 11px;
@@ -113,5 +137,6 @@ TODO: Add logos to navigation buttons
 
 .navigation-option {
 	display: none;
+	padding-left: 40px;
 }
 
