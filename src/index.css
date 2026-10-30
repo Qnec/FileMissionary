@@ -18,6 +18,7 @@ body {
 	margin: auto;
 	/*max-width: 38rem;*/
 	/*padding: 2rem;*/
+	font-size: 18px;
 	height: 100%;
 	background-color: var(--primary-bg-color);
 	color: var(--primary-font-color);
@@ -103,11 +104,15 @@ TODO: Add logos to navigation buttons
 	padding: 15px;
 }
 
-.navigation-menu > span {
-/*	height: 40px;*/
-	margin-top: 30px;
+.navigation-menu {
 	margin-left: 15px;
 	margin-right: 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+.navigation-menu > span {
+	margin-bottom: 6px;
 }
 
 .navigation-menu > span > input {
@@ -123,10 +128,9 @@ TODO: Add logos to navigation buttons
 	padding: 10px 12px;
 	box-sizing: border-box;
 	color: var(--secondary-font-color);
-	font-size: 18px;
 }
 
-.navigation-menu > span > input:checked ~ label {
+.navigation-menu > span > input:checked + label {
 	background-color: var(--tertiary-bg-color);
 	border-color: var(--secondary-border-color);
 	border-width: 1px;
@@ -140,3 +144,43 @@ TODO: Add logos to navigation buttons
 	padding-left: 40px;
 }
 
+.configuration-section {
+	border-radius: 6px;
+	background-color: var(--secondary-bg-color);
+	border-color: var(--primary-border-color);
+	border-width: 1px;
+	border-style: solid;
+	padding: 15px;
+}
+
+.configuration-section > span {
+}
+
+.radio-configuration {
+	display: flex;
+	margin-top: 15px;
+}
+
+.radio-configuration > span {
+	background-color: var(--primary-bg-color);
+	border-color: var(--primary-border-color);
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 6px;
+	color: var(--secondary-font-color);
+	margin-right: 8px;
+}
+
+.radio-configuration > span > input[type=radio] {
+	display: none;
+}
+
+.radio-configuration > span > input + label {
+	display: flex;
+	padding: 10px;
+}
+
+.radio-configuration > span > input:checked + label {
+	border-color: var(--accent-color);
+	color: var(--accent-color);
+}

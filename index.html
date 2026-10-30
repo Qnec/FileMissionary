@@ -60,8 +60,49 @@
 				dashboard
 			</div>
 			<div class="navigation-option" id="downloader">
-				<p>URL</p>
-				<input type="text" placeholder="https://...">
+				<h1>yt-dlp Media Extractor</h1>
+				<div class="downloader-url-input-container">
+					<input type="text" placeholder="https://...">
+					<button>Fetch Info</button>
+				</div>
+				<div>
+					<p>Format Settings</p>
+					<div class="configuration-section">
+						<span>Video Resolution Selector</span>
+						<div class="radio-configuration">
+							<span>
+								<input name="downloader-url-selector" type="radio" id="best-selector" checked="checked">
+								<label name="downloader-url-selector" for="best-selector">
+									Best
+								</label>
+							</span>
+							<span>
+								<input name="downloader-url-selector" type="radio" id="4k-selector">
+								<label name="downloader-url-selector" for="4k-selector">
+									4K
+								</label>
+							</span>
+							<span>
+								<input name="downloader-url-selector" type="radio" id="1080p-selector">
+								<label name="downloader-url-selector" for="1080p-selector">
+									1080p
+								</label>
+							</span>
+							<span>
+								<input name="downloader-url-selector" type="radio" id="720p-selector">
+								<label name="downloader-url-selector" for="720p-selector">
+									720p
+								</label>
+							</span>
+							<span>
+								<input name="downloader-url-selector" type="radio" id="audio-selector">
+								<label name="downloader-url-selector" for="audio-selector">
+									Audio Only
+								</label>
+							</span>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="navigation-option" id="image">
 				<p>Choose a file</p> <!-- For some godforsaken reason electron broke input type=file years ago and just never fixed it and told everyone to replicate the functionality with javascript -->
