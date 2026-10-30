@@ -1,12 +1,80 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-    <script type="module" src="/src/renderer.ts"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Hello World!</title>
+	</head>
+	<body>
+		<div class="interface-container">
+			<div class="sidebar-container">
+				<div class="titlecard">
+					<div class="logo">
+						<div>
+							<p>FM</p>
+						</div>
+					</div>
+					<div class="title">
+						<p>File Missionary</p>
+					</div>
+				</div>
+				<div class="navigation-menu">
+					<span>
+						<input name="navigation-selector" type="radio" id="dashboard-selector" checked="checked">
+						<label name="navigation-selector" for="dashboard-selector">
+							Dashboard
+						</label>
+					</span>
+					<span>
+						<input name="navigation-selector" type="radio" id="downloader-selector">
+						<label name="navigation-selector" for="downloader-selector">
+							Downloader
+						</label>
+					</span>
+					<span>
+						<input name="navigation-selector" type="radio" id="image-selector">
+						<label name="navigation-selector" for="image-selector">
+							Image tools
+						</label>
+					</span>
+					<span>
+						<input name="navigation-selector" type="radio" id="media-selector">
+						<label name="navigation-selector" for="media-selector">
+							Media converter
+						</label>
+					</span>
+					<span>
+						<input name="navigation-selector" type="radio" id="queue-selector">
+						<label name="navigation-selector" for="queue-selector">
+							Queue
+						</label>
+					</span>
+					<span>
+						<input name="navigation-selector" type="radio" id="settings-selector">
+						<label name="navigation-selector" for="settings-selector">
+							Settings
+						</label>
+					</span>
+				</div>
+			</div>
+			<div class="navigation-option" id="dashboard">
+				dashboard
+			</div>
+			<div class="navigation-option" id="downloader">
+				downloader
+			</div>
+			<div class="navigation-option" id="image">
+				image
+			</div>
+			<div class="navigation-option" id="media">
+				media
+			</div>
+			<div class="navigation-option" id="queue">
+				queue
+			</div>
+			<div class="navigation-option" id="settings">
+				settings
+			</div>
+		</div>
+		<script type="module" src="/src/renderer.ts"></script>
+	</body>
 </html>
