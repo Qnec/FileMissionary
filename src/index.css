@@ -7,6 +7,9 @@
 	--primary-border-color: #222933;
 	--secondary-border-color: #323E4D;
 	--accent-color: #00E5FF;
+	--accent-color-faded: #00a0b3;
+	--primary-transition-effect: background-color 0.5s, border-color 0.5s, color 0.5s;
+	--primary-font-size: 18px;
 }
 
 html {
@@ -18,27 +21,27 @@ body {
 	margin: auto;
 	/*max-width: 38rem;*/
 	/*padding: 2rem;*/
-	font-size: 18px;
+	font-size: var(--primary-font-size);
 	height: 100%;
 	background-color: var(--primary-bg-color);
 	color: var(--primary-font-color);
 	&:has( #dashboard-selector:checked ) #dashboard {
-		display: block;
+		display: flex;
 	}
 	&:has( #downloader-selector:checked ) #downloader {
-		display: block;
+		display: flex;
 	}
 	&:has( #image-selector:checked ) #image {
-		display: block;
+		display: flex;
 	}
 	&:has( #media-selector:checked ) #media {
-		display: block;
+		display: flex;
 	}
 	&:has( #queue-selector:checked ) #queue {
-		display: block;
+		display: flex;
 	}
 	&:has( #settings-selector:checked ) #settings {
-		display: block;
+		display: flex;
 	}
 }
 
@@ -51,6 +54,7 @@ TODO: Add logos to navigation buttons
 	display: flex;
 	align-items: stretch;
 	height: 100%;
+	width: 100%;
 }
 
 .titlecard {
@@ -116,7 +120,16 @@ TODO: Add logos to navigation buttons
 }
 
 .navigation-menu > span > input {
-	display: none;
+	/*make invisible but still visible to accessibility tools*/
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	white-space: nowrap
 }
 
 .navigation-menu > span > label {
@@ -128,6 +141,8 @@ TODO: Add logos to navigation buttons
 	padding: 10px 12px;
 	box-sizing: border-box;
 	color: var(--secondary-font-color);
+	border-color: var(--secondary-bg-color);
+	transition: var(--primary-transition-effect);
 }
 
 .navigation-menu > span > input:checked + label {
@@ -139,9 +154,57 @@ TODO: Add logos to navigation buttons
 	color: var(--primary-font-color);
 }
 
+.navigation-menu > span > input:focus-visible + label {
+	box-shadow: 0 0 0 3px rgba(0, 95, 204, 0.4);
+}
+
 .navigation-option {
 	display: none;
 	padding-left: 40px;
+	padding-right: 40px;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.downloader-url-input-container {
+	display: flex;
+	gap: 15px;
+	width: auto;
+}
+
+.downloader-url-input-container > span {
+	border-radius: 6px;
+	background-color: var(--secondary-bg-color);
+	border-color: var(--accent-color);
+	border-width: 1px;
+	border-style: solid;
+	flex-grow: 1;
+	display: flex;
+}
+
+.downloader-url-input-container > span > input {
+	background-color: transparent;
+	border: none;
+	color: var(--primary-font-color);
+	font-size: var(--primary-font-size);
+	width: auto;
+	height: auto;
+	flex-grow: 1;
+	padding-left: 15px;
+}
+
+.downloader-url-input-container > button {
+	background-color: var(--accent-color);
+}
+
+.downloader-url-input-container > button:active {
+	background-color: var(--accent-color-faded);
+}
+
+.configuration-container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
 }
 
 .configuration-section {
@@ -153,34 +216,68 @@ TODO: Add logos to navigation buttons
 	padding: 15px;
 }
 
-.configuration-section > span {
+.configuration-section > p {
+	margin-bottom: 15px;
+	margin-top: 0px;
 }
 
 .radio-configuration {
 	display: flex;
-	margin-top: 15px;
+	gap: 8px;
+	align-content: stretch;
 }
 
 .radio-configuration > span {
+	border-radius: 6px;
+}
+
+.radio-configuration > span > input[type=radio] {
+	/*make invisible but still visible to accessibility tools*/
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	white-space: nowrap
+}
+
+.radio-configuration > span > input + label {
+	display: flex;
+	padding: 10px;
 	background-color: var(--primary-bg-color);
 	border-color: var(--primary-border-color);
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 6px;
 	color: var(--secondary-font-color);
-	margin-right: 8px;
-}
-
-.radio-configuration > span > input[type=radio] {
-	display: none;
-}
-
-.radio-configuration > span > input + label {
-	display: flex;
-	padding: 10px;
+	transition: var(--primary-transition-effect);
 }
 
 .radio-configuration > span > input:checked + label {
 	border-color: var(--accent-color);
 	color: var(--accent-color);
+	background-color: var(--tertiary-bg-color);
 }
+
+.radio-configuration > span > input:focus-visible + label {
+	box-shadow: 0 0 0 3px rgba(0, 95, 204, 0.4);
+}
+
+.button-configuration {
+	padding: 16px;
+	font-size: var(--primary-font-size);
+	/*transition: var(--primary-transition-effect);*/
+	font-weight: bold;
+	border-width: 0px;
+	border-radius: 6px;
+	color: black;
+}
+
+.button-configuration:active {
+	
+}
+
+

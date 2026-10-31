@@ -62,13 +62,15 @@
 			<div class="navigation-option" id="downloader">
 				<h1>yt-dlp Media Extractor</h1>
 				<div class="downloader-url-input-container">
-					<input type="text" placeholder="https://...">
-					<button>Fetch Info</button>
+					<span> <!-- future proofing for a link icon here -->
+						<input type="text" placeholder="https://...">
+					</span>
+					<button class="button-configuration">Fetch Info</button>
 				</div>
-				<div>
+				<div class="configuration-container">
 					<p>Format Settings</p>
 					<div class="configuration-section">
-						<span>Video Resolution Selector</span>
+						<p>Video Resolution Selector</p>
 						<div class="radio-configuration">
 							<span>
 								<input name="downloader-url-selector" type="radio" id="best-selector" checked="checked">
@@ -102,6 +104,15 @@
 							</span>
 						</div>
 					</div>
+					<div class="configuration-section">
+						<p>Segment</p>
+						<div class="double-sided-slider-configuration">
+							
+						</div>
+					</div>
+				</div>
+				<div class="information-container">
+					
 				</div>
 			</div>
 			<div class="navigation-option" id="image">
