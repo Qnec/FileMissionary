@@ -1,0 +1,23 @@
+Local File Missionary uses the following separately distributed projects:
+
+yt-dlp
+  License: Unlicense
+  Source: https://github.com/yt-dlp/yt-dlp
+
+FFmpeg
+  License: LGPL-2.1-or-later for LGPL builds; exact build configuration controls
+  whether GPL terms apply.
+  Source: https://ffmpeg.org/
+
+ImageMagick
+  License: ImageMagick License
+  Source: https://imagemagick.org/
+
+This repository does not include third-party binaries. If binaries are added to
+a release, retain the exact license and attribution files that accompany those
+artifacts, provide corresponding source where required, and record versions,
+URLs, checksums, and build configuration. Do not configure FFmpeg with GPL or
+nonfree components unless the application and distribution are intentionally
+licensed accordingly.
+
+This project is not affiliated with yt-dlp, FFmpeg, or ImageMagick.
