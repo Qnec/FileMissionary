@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { fileName, replaceExtension } from "./media-paths";
+import { fileName, joinStoragePath, replaceExtension } from "./media-paths";
 
 describe("media path helpers", () => {
   it("extracts file names from Windows and POSIX paths", () => {
@@ -14,5 +14,13 @@ describe("media path helpers", () => {
 
   it("uses a safe fallback for an empty path", () => {
     expect(fileName("")).toBe("output");
+  });
+
+  it("joins storage directory and file name cross-platform", () => {
+    expect(joinStoragePath("C:\\media", "clip.mp4")).toBe("C:\\media\\clip.mp4");
+    expect(joinStoragePath("C:\\media\\", "clip.mp4")).toBe("C:\\media\\clip.mp4");
+    expect(joinStoragePath("/Users/alex/Downloads", "clip.mp4")).toBe("/Users/alex/Downloads/clip.mp4");
+    expect(joinStoragePath("/Users/alex/Downloads/", "clip.mp4")).toBe("/Users/alex/Downloads/clip.mp4");
+    expect(joinStoragePath("", "clip.mp4")).toBe("clip.mp4");
   });
 });
